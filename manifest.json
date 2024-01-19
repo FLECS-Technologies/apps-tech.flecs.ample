@@ -1,27 +1,20 @@
 {
     "_schemaVersion": "2.0.0",
-    "app": "tech.flecs.my-app",
+    "app": "tech.flecs.ample",
     "version": "##VERSION##",
     "revision": "##FLECS_VERSION##",
-    "image": "flecs.azurecr.io/tech.flecs.my-app",
-    "multiInstance": false,
+    "image": "flecs.azurecr.io/tech.flecs.ample",
+    "multiInstance": true,
     "editor": "",
-    "args": [
-        "--launch-arg-1",
-        "--launch-arg-2=8000"
-    ],
+    "args": [],
     "capabilities": [],
     "conffiles": [],
     "devices": [],
-    "env": [
-        "MY_ENV=value"
-    ],
+    "env": [],
     "interactive": false,
     "ports": [
-        "12345:12345"
+        "7447:7447"
     ],
     "startupOptions": [],
-    "volumes": [
-        "my-app-etc:/etc/my-app"
-    ]
+    "volumes": []
 }
