@@ -4,3 +4,6 @@
 [submodule "app/flecs-build"]
 	path = app/flecs-build
 	url = https://github.com/FLECS-Technologies/flecs-build.git
+[submodule "app/flunder"]
+	path = app/flunder
+	url = https://github.com/FLECS-Technologies/flunder.git
