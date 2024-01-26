@@ -126,7 +126,8 @@ auto exec_example_loop() //
             std::this_thread::sleep_for(std::chrono::seconds(5));
         };
 
-        flunder_client.unsubscribe("**");
+        flunder_client.unsubscribe("/flecs/flunder/cpp/**");
+        flunder_client.unsubscribe("/flecs/flunder/external");
         flunder_client.disconnect();
 
         std::this_thread::sleep_for(std::chrono::seconds(5));
