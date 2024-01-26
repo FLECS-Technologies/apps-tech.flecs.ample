@@ -12,3 +12,9 @@ WORKDIR /usr/src/app
 RUN cmake -S app/ -B app/build/ -G Ninja -DARCH=${ARCH} -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=/fs
 RUN cmake --build app/build/
 RUN cmake --build app/build/ --target install
+
+FROM debian:bookworm-slim
+
+COPY --from=builder /fs /usr/
+
+ENTRYPOINT ["/usr/bin/ample"]
