@@ -39,9 +39,23 @@ set(SRC
     src/example_app.cpp
 )
 
-add_executable(example_app ${SRC})
+add_executable(ample ${SRC})
 
-target_include_directories(example_app PRIVATE include)
-target_link_libraries(example_app PUBLIC
+target_include_directories(ample PRIVATE include)
+target_link_libraries(ample PUBLIC
     flunder.shared
+)
+
+install(TARGETS ample RUNTIME)
+install(TARGETS flunder.shared LIBRARY)
+get_target_property(zenohc-lib zenohc::lib IMPORTED_LOCATION)
+install(
+        FILES ${zenohc-lib}
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+        PERMISSIONS GROUP_READ GROUP_EXECUTE
+        PERMISSIONS WORLD_READ WORLD_EXECUTE
+)
+install(
+        CODE "file (INSTALL ${pkgcfg_lib_Mosquitto_mosquitto} DESTINATION ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR} FOLLOW_SYMLINK_CHAIN)"
 )
