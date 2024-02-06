@@ -12,9 +12,7 @@
     "devices": [],
     "env": [],
     "interactive": false,
-    "ports": [
-        "7447:7447"
-    ],
+    "ports": [],
     "startupOptions": [],
     "volumes": []
 }
