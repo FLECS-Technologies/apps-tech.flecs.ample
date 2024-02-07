@@ -1,14 +1,14 @@
 name: "App release"
 on:
-  push:
-    tags:
-      - '*'
+  release:
+    types:
+      - released
 jobs:
   trigger-app-release:
     uses: FLECS-Technologies/app-sdk/.github/workflows/trigger_app_release.yml@main
     with:
       app-name: tech.flecs.ample
-      release-tag: ${{ github.ref }}
-      app-version: ${{ github.ref_name }}
+      release-tag: ${{ github.event.release.tag_name }}
+      app-version: ${{ github.event.release.tag_name }}
     secrets:
       APP_RELEASE_TOKEN: ${{ secrets.APP_RELEASE_TOKEN }}
