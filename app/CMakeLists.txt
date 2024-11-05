@@ -19,6 +19,7 @@ include(${CMAKE_SOURCE_DIR}/flecs-build/cmake/flecs-build.cmake)
 project(tech.flecs.ample VERSION 1.0.2)
 
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
+    set(FLECS_NEED_ZENOHC TRUE)
     add_subdirectory(flecs-external)
 endif()
 add_subdirectory(flunder)
